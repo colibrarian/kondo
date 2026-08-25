@@ -33,7 +33,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=EB+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <!-- ============================================================
      STRUCTURED DATA (JSON-LD)
@@ -250,10 +250,17 @@ button{font-family:var(--ui); cursor:pointer; border:none; background:none;}
 .fabric-card h3{ font-size:1.5rem; margin-bottom:14px; }
 .fabric-card > p{ color:var(--ink-soft); margin-bottom:26px; }
 .attr-list{ list-style:none; }
-.attr-list li{ padding:14px 0; border-top:1px solid var(--line); }
+.attr-list li{ border-top:1px solid var(--line); }
 .attr-list li:first-child{ border-top:none; }
-.attr-list b{ display:block; font-family:var(--ui); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
-.attr-list span{ color:var(--ink-soft); font-size:.98rem; }
+.attr-list details summary{
+  padding:14px 0; font-family:var(--ui); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.attr-list details summary::-webkit-details-marker{ display:none; }
+.attr-list details summary::after{ content:'+'; font-size:1rem; color:var(--ink-soft); flex-shrink:0; }
+.attr-list details[open] summary::after{ content:'\2212'; }
+.attr-list details[open] summary{ color:var(--ink); }
+.attr-list details p{ color:var(--ink-soft); font-size:.98rem; padding-bottom:16px; margin:0; }
 
 /* ============ DROPS ============ */
 .drop-tabs{ display:flex; gap:8px; margin-bottom:52px; }
@@ -458,7 +465,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="siteHeader">
-  <a href="#top" class="logo"><img src="https://ik.imagekit.io/colibrarian/Kondo/logo%20minimal.png" alt="KONDŌ" class="logo-img"></a>
+  <a href="#top" class="logo"><img src="https://ik.imagekit.io/colibrarian/Kondo/logo%20minimal.png?tr=w-300,q-80,f-auto" alt="KONDŌ" class="logo-img"></a>
   <nav class="main-nav" aria-label="Main navigation">
     <a href="#about">About</a>
     <a href="#fabrics">Fabrics</a>
@@ -501,7 +508,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
 <!-- ============ MEANING ============ -->
 <section class="section" id="meaning">
   <div class="wrap meaning-grid">
-    <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/8.jpg?updatedAt=1787655572763" alt="KONDŌ — Golden Hall" loading="lazy">
+    <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/8.jpg?updatedAt=1787655572763&tr=w-700,q-75,f-auto" alt="KONDŌ — Golden Hall" loading="lazy">
     <div class="meaning-text reveal">
       <span class="eyebrow">What does KONDŌ mean?</span>
       <p>In Japanese Buddhism, KONDŌ (金堂) means "Golden Hall." It is the central and most sacred space of a Buddhist temple, where statues of the Buddha are enshrined and important rituals are performed.</p>
@@ -522,7 +529,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
       <blockquote class="pull">"Not aggression. Not display. But control. Dragon lives in silence and needs no proof."</blockquote>
       <p>The DRAGON in the philosophy of KONDŌ represents inner energy. It is present in the moment, connected to its source of <strong>STRENGTH</strong>.</p>
     </div>
-    <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/4.jpg?updatedAt=1787655572713" alt="About KONDŌ" loading="lazy">
+    <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/4.jpg?updatedAt=1787655572713&tr=w-700,q-75,f-auto" alt="About KONDŌ" loading="lazy">
   </div>
 </section>
 
@@ -536,25 +543,25 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
     </div>
     <div class="fabric-cards">
       <div class="fabric-card reveal">
-        <img class="block-photo" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/1.jpg?updatedAt=1787655572702" alt="Ramie fabric — KONDŌ" loading="lazy" style="margin-bottom:26px;">
+        <img class="block-photo" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/1.jpg?updatedAt=1787655572702&tr=w-700,q-75,f-auto" alt="Ramie fabric — KONDŌ" loading="lazy" style="margin-bottom:26px;">
         <h3>Ramie</h3>
         <p>Ramie is a natural textile fibre derived from the Boehmeria nivea plant, also known as Chinese nettle or white ramie, a member of the nettle family. Ramie has been used by humans for thousands of years.</p>
         <ul class="attr-list">
-          <li><b>Strength</b><span>Ramie is one of the strongest natural textile fibres. It is highly durable, and its strength increases when wet, unlike many other fibres that become weaker.</span></li>
-          <li><b>Appearance &amp; Texture</b><span>Ramie has a subtle silky sheen reminiscent of silk. It is naturally crisper than linen, but becomes softer with wear and washing.</span></li>
-          <li><b>Hygiene</b><span>Naturally resistant to bacteria, mildew, rot, and pests, making it a durable and hygienic choice.</span></li>
-          <li><b>Thermoregulation</b><span>Highly absorbent and breathable, ramie helps regulate body temperature and feels comfortable in warm and humid climates.</span></li>
-          <li><b>Durability</b><span>Ramie has excellent resistance to sunlight and retains its shape well through repeated washing.</span></li>
+          <li><details><summary>Strength</summary><p>Ramie is one of the strongest natural textile fibres. It is highly durable, and its strength increases when wet, unlike many other fibres that become weaker.</p></details></li>
+          <li><details><summary>Appearance &amp; Texture</summary><p>Ramie has a subtle silky sheen reminiscent of silk. It is naturally crisper than linen, but becomes softer with wear and washing.</p></details></li>
+          <li><details><summary>Hygiene</summary><p>Naturally resistant to bacteria, mildew, rot, and pests, making it a durable and hygienic choice.</p></details></li>
+          <li><details><summary>Thermoregulation</summary><p>Highly absorbent and breathable, ramie helps regulate body temperature and feels comfortable in warm and humid climates.</p></details></li>
+          <li><details><summary>Durability</summary><p>Ramie has excellent resistance to sunlight and retains its shape well through repeated washing.</p></details></li>
         </ul>
       </div>
       <div class="fabric-card reveal">
-        <img class="block-photo" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/2.jpg?updatedAt=1787655572699" alt="Linen fabric — KONDŌ" loading="lazy" style="margin-bottom:26px;">
+        <img class="block-photo" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/2.jpg?updatedAt=1787655572699&tr=w-700,q-75,f-auto" alt="Linen fabric — KONDŌ" loading="lazy" style="margin-bottom:26px;">
         <h3>Linen</h3>
         <p>Linen is a natural textile fibre made from the stem of the flax plant. One of the oldest textile fibres in the world, linen has been used for thousands of years and remains valued for its natural strength, breathability and distinctive texture.</p>
         <ul class="attr-list">
-          <li><b>Strength</b><span>Linen is naturally strong and durable. Its strength increases when wet, which has contributed to its long-standing reputation as a resilient textile fibre.</span></li>
-          <li><b>Breathability</b><span>Linen allows air and water vapour to circulate freely, making it feel fresh and comfortable against the skin.</span></li>
-          <li><b>Thermoregulation</b><span>Linen helps regulate body temperature — keeping the body cool in warm conditions while also providing a degree of insulation in cooler environments.</span></li>
+          <li><details><summary>Strength</summary><p>Linen is naturally strong and durable. Its strength increases when wet, which has contributed to its long-standing reputation as a resilient textile fibre.</p></details></li>
+          <li><details><summary>Breathability</summary><p>Linen allows air and water vapour to circulate freely, making it feel fresh and comfortable against the skin.</p></details></li>
+          <li><details><summary>Thermoregulation</summary><p>Linen helps regulate body temperature — keeping the body cool in warm conditions while also providing a degree of insulation in cooler environments.</p></details></li>
         </ul>
       </div>
     </div>
@@ -584,8 +591,8 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
         <p>Designed for movement, presence and everything in between. Each piece is created to move effortlessly with you through the city — from quiet mornings to busy days and unplanned moments. Clean lines, considered silhouettes and natural materials create a balance between comfort and structure. Less distraction. More freedom.</p>
       </div>
       <div class="product-grid" id="gridCity">
-        <article class="product-card" data-id="c1" data-name="Kimono" data-line="City Drop" data-price="140" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/12.jpg" data-sizes="S,M,L" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/12.jpg" alt="KONDŌ City Drop — Kimono" loading="lazy"></div>
+        <article class="product-card" data-id="c1" data-name="Kimono" data-line="City Drop" data-price="140" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/12.jpg?tr=w-900,q-75,f-auto" data-sizes="S,M,L" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/12.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Kimono" loading="lazy"></div>
           <h4 class="product-name">Kimono</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">140 €</span></div>
@@ -596,8 +603,8 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
             <li>Cut: relaxed oversize.</li>
           </ul>
         </article>
-        <article class="product-card" data-id="c2" data-name="Harem Pants" data-line="City Drop" data-price="114" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/14.jpg" data-sizes="S/M,L/XL" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/14.jpg" alt="KONDŌ City Drop — Harem Pants" loading="lazy"></div>
+        <article class="product-card" data-id="c2" data-name="Harem Pants" data-line="City Drop" data-price="114" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/14.jpg?tr=w-900,q-75,f-auto" data-sizes="S/M,L/XL" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/14.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Harem Pants" loading="lazy"></div>
           <h4 class="product-name">Harem Pants</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">114 €</span></div>
@@ -608,8 +615,8 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
             <li>Cut: relaxed, comfortable fit.</li>
           </ul>
         </article>
-        <article class="product-card" data-id="c3" data-name="Top" data-line="City Drop" data-price="104" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/13.jpg" data-sizes="XS,S,M,L" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/13.jpg" alt="KONDŌ City Drop — Top" loading="lazy"></div>
+        <article class="product-card" data-id="c3" data-name="Top" data-line="City Drop" data-price="104" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/13.jpg?tr=w-900,q-75,f-auto" data-sizes="XS,S,M,L" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/13.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Top" loading="lazy"></div>
           <h4 class="product-name">Top</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">104 €</span></div>
@@ -620,14 +627,14 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
             <li>Silhouette: relaxed.</li>
           </ul>
         </article>
-        <article class="product-card" data-id="c4" data-name="Dress" data-line="City Drop" data-price="" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/15.jpg" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/15.jpg" alt="KONDŌ City Drop — Dress" loading="lazy"></div>
+        <article class="product-card" data-id="c4" data-name="Dress" data-line="City Drop" data-price="" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/15.jpg?tr=w-900,q-75,f-auto" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/15.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Dress" loading="lazy"></div>
           <h4 class="product-name">Dress</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">Price on request</span></div>
         </article>
-        <article class="product-card" data-id="c5" data-name="Trousers" data-line="City Drop" data-price="" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/11.jpg" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/11.jpg" alt="KONDŌ City Drop — Trousers" loading="lazy"></div>
+        <article class="product-card" data-id="c5" data-name="Trousers" data-line="City Drop" data-price="" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/11.jpg?tr=w-900,q-75,f-auto" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/11.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Trousers" loading="lazy"></div>
           <h4 class="product-name">Trousers</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">Price on request</span></div>
@@ -693,7 +700,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
           <li>Personal requests welcome — simply get in touch by email or phone</li>
         </ul>
       </div>
-      <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/6.jpg?updatedAt=1787655572753" alt="Made just for you — KONDŌ" loading="lazy">
+      <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/6.jpg?updatedAt=1787655572753&tr=w-700,q-75,f-auto" alt="Made just for you — KONDŌ" loading="lazy">
     </div>
 
     <div class="order-highlight reveal">
@@ -710,7 +717,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
 <!-- ============ CARE ============ -->
 <section class="section" id="care">
   <div class="wrap care-grid">
-    <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/7.jpg?updatedAt=1787655572747" alt="Wash and care — KONDŌ" loading="lazy">
+    <img class="block-photo reveal" src="https://ik.imagekit.io/colibrarian/Kondo/gallery/7.jpg?updatedAt=1787655572747&tr=w-700,q-75,f-auto" alt="Wash and care — KONDŌ" loading="lazy">
     <div class="reveal">
       <span class="eyebrow">Wash &amp; Care</span>
       <h2>Care for your KONDŌ, and it will care for you</h2>
