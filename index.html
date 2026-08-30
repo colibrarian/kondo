@@ -95,11 +95,11 @@
   "@type": "ItemList",
   "name": "KONDŌ Collections",
   "itemListElement": [
-    { "@type": "Product", "position": 1, "name": "Kimono", "category": "City Drop", "material": "Linen", "color": "Black", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/12.jpg", "description": "Relaxed wrap-style kimono in 100% linen with a soft belt, voluminous topstitched sleeves, side pockets, and a wrap front closure.", "offers": { "@type": "Offer", "price": "140", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
-    { "@type": "Product", "position": 2, "name": "Harem Pants", "category": "City Drop", "material": "Linen", "color": "Black", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/14.jpg", "description": "Elastic-waist harem pants in 100% natural linen with a relaxed, breathable fit.", "offers": { "@type": "Offer", "price": "114", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
-    { "@type": "Product", "position": 3, "name": "Top", "category": "City Drop", "material": "Linen", "color": "Black", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/13.jpg", "description": "Loose-fit top in 100% natural linen with an adjustable front-hem drawstring and an elongated back.", "offers": { "@type": "Offer", "price": "104", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
-    { "@type": "Product", "position": 4, "name": "Dress", "category": "City Drop", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/15.jpg" },
-    { "@type": "Product", "position": 5, "name": "Trousers", "category": "City Drop", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/11.jpg" },
+    { "@type": "Product", "position": 1, "name": "Skirt", "category": "City Drop", "material": "Linen or Ramie", "color": "Black, Green, Ivory", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/skirt/1.jpg", "description": "High-waisted A-silhouette skirt with front pleats and pockets inside, back zip fastening, below the knee length.", "offers": { "@type": "Offer", "price": "108", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
+    { "@type": "Product", "position": 2, "name": "Kimono", "category": "City Drop", "material": "Linen or Ramie", "color": "Black, Green, Ivory", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/kimono/1.jpg", "description": "Relaxed wrap-style kimono with a voluminous topstitched sleeves and architectural decorative stitching.", "offers": { "@type": "Offer", "price": "140", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
+    { "@type": "Product", "position": 3, "name": "Aladdin", "category": "City Drop", "material": "Linen or Ramie", "color": "Black, Green, Ivory", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/1.jpg", "description": "Elastic-waist Aladdin pants in natural linen or ramie with practical side pockets and a relaxed, loose fit.", "offers": { "@type": "Offer", "price": "114", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
+    { "@type": "Product", "position": 4, "name": "Top", "category": "City Drop", "material": "Linen or Ramie", "color": "Black, Olive, Ivory", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/top/1.jpg", "description": "Minimalist, relaxed-fit top with an adjustable front drawstring and elongated back.", "offers": { "@type": "Offer", "price": "104", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
+    { "@type": "Product", "position": 5, "name": "Trousers", "category": "City Drop", "material": "Linen or Ramie", "color": "Black, Green, Ivory", "image": "https://ik.imagekit.io/colibrarian/Kondo/products/trousers/6.jpg", "description": "High-waisted wide-leg trousers with a relaxed, flowing silhouette and side zip fastening.", "offers": { "@type": "Offer", "price": "125", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
     { "@type": "Product", "position": 6, "name": "Top Jasmin", "category": "Yoga Drop", "material": "Ramie", "offers": { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
     { "@type": "Product", "position": 7, "name": "Panties Jasmin", "category": "Yoga Drop", "material": "Ramie", "offers": { "@type": "Offer", "price": "39", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
     { "@type": "Product", "position": 8, "name": "Long Sleeve Wrap Jasmin", "category": "Yoga Drop", "material": "Ramie", "offers": { "@type": "Offer", "price": "89", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder" } },
@@ -309,9 +309,23 @@ button{font-family:var(--ui); cursor:pointer; border:none; background:none;}
   background:var(--white); border:1px solid var(--line); z-index:2;
 }
 .modal-close svg{ width:16px; height:16px; }
-.modal-media{ background:var(--card); display:flex; align-items:center; justify-content:center; min-height:340px; }
+.modal-media{ background:var(--card); display:flex; align-items:center; justify-content:center; min-height:340px; position:relative; overflow:hidden; }
 .modal-media img{ width:100%; height:100%; object-fit:cover; display:block; }
 .modal-media svg{ width:28%; opacity:.4; }
+.modal-nav{
+  position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%;
+  background:rgba(255,255,255,.85); display:flex; align-items:center; justify-content:center; z-index:2;
+  transition:background .25s var(--ease); opacity:0; pointer-events:none;
+}
+.modal-media:hover .modal-nav, .modal-media:focus-within .modal-nav{ opacity:1; pointer-events:auto; }
+.modal-nav:hover{ background:var(--white); }
+.modal-nav svg{ width:16px; height:16px; color:var(--ink); opacity:1; }
+.modal-nav-prev{ left:14px; }
+.modal-nav-next{ right:14px; }
+.modal-nav.hidden-nav{ display:none; }
+.modal-dots{ position:absolute; bottom:16px; left:0; right:0; display:flex; justify-content:center; gap:6px; z-index:2; }
+.modal-dot{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.6); border:1px solid rgba(17,17,17,.25); padding:0; }
+.modal-dot.active{ background:var(--ink); }
 .modal-info{ padding:48px 42px; display:flex; flex-direction:column; }
 .modal-line{ font-family:var(--ui); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
 .modal-name{ font-size:1.7rem; margin-bottom:10px; }
@@ -320,8 +334,9 @@ button{font-family:var(--ui); cursor:pointer; border:none; background:none;}
 .modal-specs{ list-style:none; margin-bottom:26px; }
 .modal-specs li{ font-family:var(--ui); font-size:.85rem; color:var(--ink-soft); padding:7px 0; border-top:1px solid var(--line); }
 .modal-specs li:first-child{ border-top:none; }
+.option-group{ margin-bottom:24px; }
 .modal-sizes-label{ font-family:var(--ui); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:10px; }
-.size-options{ display:flex; gap:8px; margin-bottom:30px; flex-wrap:wrap; }
+.size-options{ display:flex; gap:8px; flex-wrap:wrap; }
 .size-btn{ border:1px solid var(--line); padding:9px 15px; font-family:var(--ui); font-size:.82rem; color:var(--ink); background:var(--white); }
 .size-btn:hover{ border-color:var(--ink); }
 .size-btn.selected{ background:var(--ink); border-color:var(--ink); color:var(--white); }
@@ -334,6 +349,7 @@ button{font-family:var(--ui); cursor:pointer; border:none; background:none;}
   .product-modal{ grid-template-columns:1fr; width:min(94vw,480px); max-height:92vh; }
   .modal-media{ min-height:260px; }
   .modal-info{ padding:34px 26px; }
+  .modal-nav{ opacity:1; pointer-events:auto; }
 }
 
 /* ============ MADE TO ORDER ============ */
@@ -584,72 +600,121 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
     <!-- Product cards are static HTML (not JS-generated) so search and AI crawlers,
          which typically do not execute JavaScript, can read the full catalog.
          Click/tap a card to open the product popup (photo, description, size, add to bag). -->
-    <div id="dropCity" class="drop-panel reveal">
+    <div id="dropCity" class="drop-panel">
       <div class="drop-intro">
         <span class="tag">City Drop</span>
         <h3 style="font-family:var(--body); font-style:italic; font-weight:500; font-size:1.3rem; margin-top:8px;">Clothing created for the rhythm of everyday life.</h3>
         <p>Designed for movement, presence and everything in between. Each piece is created to move effortlessly with you through the city — from quiet mornings to busy days and unplanned moments. Clean lines, considered silhouettes and natural materials create a balance between comfort and structure. Less distraction. More freedom.</p>
       </div>
       <div class="product-grid" id="gridCity">
-        <article class="product-card" data-id="c1" data-name="Kimono" data-line="City Drop" data-price="140" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/12.jpg?tr=w-900,q-75,f-auto" data-sizes="S,M,L" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/12.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Kimono" loading="lazy"></div>
+        <article class="product-card" data-id="c1" data-name="Skirt" data-line="City Drop" data-price="108" data-sizes="S,M,L" data-materials="Linen,Ramie" data-colors="Black,Green,Ivory" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/skirt/1.jpg?tr=w-500,q-75,f-auto" alt="KONDŌ City Drop — Skirt" loading="lazy"></div>
+          <h4 class="product-name">Skirt</h4>
+          <div class="product-line">City Drop</div>
+          <div class="product-bottom"><span class="product-price">108 €</span></div>
+          <p class="product-desc" hidden>High-waisted A-silhouette skirt with front pleats and pockets inside. Back zip fastening. Below the knee length.</p>
+          <dl class="product-specs" hidden>
+            <dt>Material</dt><dd>100% linen or ramie</dd>
+            <dt>Colour</dt><dd>Black, Green, Ivory</dd>
+            <dt>Fit</dt><dd>High-waisted A-silhouette</dd>
+          </dl>
+          <ul class="product-images" hidden>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/skirt/1.jpg?tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Skirt"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/skirt/2.jpg?tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Skirt"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/skirt/3.jpg?tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Skirt"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/skirt/4.jpg?tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Skirt"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/skirt/5.jpg?tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Skirt"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/skirt/6.jpg?tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Skirt"></li>
+          </ul>
+        </article>
+        <article class="product-card" data-id="c2" data-name="Kimono" data-line="City Drop" data-price="140" data-sizes="S,M,L" data-materials="Linen,Ramie" data-colors="Black,Green,Ivory" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/1.jpg?updatedAt=1788090004452&tr=w-500,q-75,f-auto" alt="KONDŌ City Drop — Kimono" loading="lazy"></div>
           <h4 class="product-name">Kimono</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">140 €</span></div>
-          <p class="product-desc" hidden>Kimono cut from 100% linen in deep black. The relaxed wrap silhouette with a soft belt gently follows the figure while keeping ease of movement. Voluminous sleeves with decorative topstitching add architectural detail. Breathable natural linen suits any season, with a noble texture and soft matte finish for a considered, elevated look. Pairs easily with base trousers or skirts, or with statement accessories — for everyday wear, travel, or special occasions. Details: detachable waist belt, side pockets, wide sleeves with topstitching, vertical topstitching along the back, wrap front closure.</p>
-          <ul class="product-specs" hidden>
-            <li>Material: 100% linen.</li>
-            <li>Color: black.</li>
-            <li>Cut: relaxed oversize.</li>
+          <p class="product-desc" hidden>A kimono crafted from 100% linen or ramie in a deep, timeless black. Its relaxed wrap silhouette gently defines the figure while allowing complete freedom of movement. Voluminous sleeves with architectural decorative stitching add structure and visual character to the otherwise minimal design. Natural linen is breathable, comfortable against the skin and suitable for every season. Its refined texture and subtle matte finish give the kimono a quiet, sophisticated character. Designed to move effortlessly between everyday life, travel and more special occasions. Wear it with minimal trousers or skirts, or style it with statement accessories.</p>
+          <dl class="product-specs" hidden>
+            <dt>Material</dt><dd>100% linen or ramie</dd>
+            <dt>Colour</dt><dd>Black, Green, Ivory</dd>
+            <dt>Fit</dt><dd>Relaxed oversized silhouette</dd>
+          </dl>
+          <ul class="product-images" hidden>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/1.jpg?updatedAt=1788090004452&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/2.jpg?updatedAt=1788090004458&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/3.jpg?updatedAt=1788090004252&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/4.jpg?updatedAt=1788090004444&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/5.jpg?updatedAt=1788090004319&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/6.jpg?updatedAt=1788090004463&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/7.jpg?updatedAt=1788090004364&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/kimono/8.jpg?updatedAt=1788090004339&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Kimono"></li>
           </ul>
         </article>
-        <article class="product-card" data-id="c2" data-name="Harem Pants" data-line="City Drop" data-price="114" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/14.jpg?tr=w-900,q-75,f-auto" data-sizes="S/M,L/XL" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/14.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Harem Pants" loading="lazy"></div>
-          <h4 class="product-name">Harem Pants</h4>
+        <article class="product-card" data-id="c3" data-name="Aladdin" data-line="City Drop" data-price="114" data-sizes="S,M,L" data-materials="Linen,Ramie" data-colors="Black,Green,Ivory" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/1.jpg?updatedAt=1788090113905&tr=w-500,q-75,f-auto" alt="KONDŌ City Drop — Aladdin" loading="lazy"></div>
+          <h4 class="product-name">Aladdin</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">114 €</span></div>
-          <p class="product-desc" hidden>Elastic-waist harem pants in 100% natural linen, black. The relaxed cut moves freely with you, and the soft elastic waistband keeps it comfortable all day. Natural linen lets skin breathe and stays cool even in warm weather. Well suited to everyday wear, rest, walks, and travel — easy to pair with basic tees, shirts, and tops in a casual, boho, or eco style.</p>
-          <ul class="product-specs" hidden>
-            <li>Material: 100% linen.</li>
-            <li>Color: black.</li>
-            <li>Cut: relaxed, comfortable fit.</li>
+          <p class="product-desc" hidden>Natural linen Aladdin pants with an elastic waistband and practical side pockets. The relaxed, loose fit allows complete freedom of movement, while the soft elasticated waistband provides a comfortable fit and all-day comfort. These Aladdin pants are perfect for everyday outfits, holidays, walks, and travel.</p>
+          <dl class="product-specs" hidden>
+            <dt>Material</dt><dd>100% linen or ramie</dd>
+            <dt>Colour</dt><dd>Black, Green, Ivory</dd>
+            <dt>Fit</dt><dd>Comfortable, easy-to-wear silhouette</dd>
+          </dl>
+          <ul class="product-images" hidden>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/1.jpg?updatedAt=1788090113905&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Aladdin"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/2.jpg?updatedAt=1788090113681&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Aladdin"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/3.jpg?updatedAt=1788090113909&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Aladdin"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/4.jpg?updatedAt=1788090113912&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Aladdin"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/5.jpg?updatedAt=1788090113900&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Aladdin"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/aladdin/6.jpg?updatedAt=1788090113917&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Aladdin"></li>
           </ul>
         </article>
-        <article class="product-card" data-id="c3" data-name="Top" data-line="City Drop" data-price="104" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/13.jpg?tr=w-900,q-75,f-auto" data-sizes="XS,S,M,L" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/13.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Top" loading="lazy"></div>
+        <article class="product-card" data-id="c4" data-name="Top" data-line="City Drop" data-price="104" data-sizes="XS,S,M,L" data-materials="Linen,Ramie" data-colors="Black,Olive,Ivory" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/1.jpg?updatedAt=1788090079161&tr=w-500,q-75,f-auto" alt="KONDŌ City Drop — Top" loading="lazy"></div>
           <h4 class="product-name">Top</h4>
           <div class="product-line">City Drop</div>
           <div class="product-bottom"><span class="product-price">104 €</span></div>
-          <p class="product-desc" hidden>A laconic, loose-fit top in 100% natural linen, black. Soft, voluminous silhouette with a minimalist design that fits easily into both everyday and considered wardrobes. An adjustable drawstring along the front hem lets you change the fit — from relaxed to more fitted. The elongated back and flowing side seams add lightness and movement, with vertical topstitching along the back. Pairs well with wide linen trousers, skirts, and layered minimalist or casual looks. Available by pre-order.</p>
-          <ul class="product-specs" hidden>
-            <li>Material: 100% linen.</li>
-            <li>Color: black.</li>
-            <li>Silhouette: relaxed.</li>
+          <p class="product-desc" hidden>A minimalist, relaxed-fit top with voluminous silhouette. Adjustable front drawstring with long ties, elongated back, asymmetric line. Pairs effortlessly with wide-leg linen trousers, skirts and layered looks for a minimalist, contemporary wardrobe.</p>
+          <dl class="product-specs" hidden>
+            <dt>Material</dt><dd>100% linen or ramie</dd>
+            <dt>Available colour</dt><dd>Black, Olive, Ivory</dd>
+            <dt>Silhouette</dt><dd>Relaxed fit</dd>
+          </dl>
+          <ul class="product-images" hidden>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/1.jpg?updatedAt=1788090079161&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Top"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/2.jpg?updatedAt=1788090079231&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Top"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/3.jpg?updatedAt=1788090079279&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Top"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/4.jpg?updatedAt=1788090079404&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Top"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/5.jpg?updatedAt=1788090079460&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Top"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/6.jpg?updatedAt=1788090079450&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Top"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/top/7.jpg?updatedAt=1788090079396&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Top"></li>
           </ul>
         </article>
-        <article class="product-card" data-id="c4" data-name="Dress" data-line="City Drop" data-price="" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/15.jpg?tr=w-900,q-75,f-auto" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/15.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Dress" loading="lazy"></div>
-          <h4 class="product-name">Dress</h4>
-          <div class="product-line">City Drop</div>
-          <div class="product-bottom"><span class="product-price">Price on request</span></div>
-        </article>
-        <article class="product-card" data-id="c5" data-name="Trousers" data-line="City Drop" data-price="" data-image="https://ik.imagekit.io/colibrarian/Kondo/products/11.jpg?tr=w-900,q-75,f-auto" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/11.jpg?tr=w-500,q-72,f-auto" alt="KONDŌ City Drop — Trousers" loading="lazy"></div>
+        <article class="product-card" data-id="c5" data-name="Trousers" data-line="City Drop" data-price="125" data-sizes="S,M,L" data-materials="Linen,Ramie" data-colors="Black,Green,Ivory" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="product-photo"><img src="https://ik.imagekit.io/colibrarian/Kondo/products/trousers/6.jpg?updatedAt=1788090052221&tr=w-500,q-75,f-auto" alt="KONDŌ City Drop — Trousers" loading="lazy"></div>
           <h4 class="product-name">Trousers</h4>
           <div class="product-line">City Drop</div>
-          <div class="product-bottom"><span class="product-price">Price on request</span></div>
-        </article>
-        <article class="product-card" data-id="c6" data-name="Dress 2" data-line="City Drop" data-price="" role="button" tabindex="0" aria-haspopup="dialog">
-          <div class="product-photo"><svg viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1" aria-hidden="true"><path d="M8 4h8l2 4-3 2v10H9V10L6 8l2-4Z"/></svg></div>
-          <h4 class="product-name">Dress 2</h4>
-          <div class="product-line">City Drop</div>
-          <div class="product-bottom"><span class="product-price">Price on request</span></div>
+          <div class="product-bottom"><span class="product-price">125 €</span></div>
+          <p class="product-desc" hidden>High-waisted wide-leg trousers with a relaxed, flowing silhouette. Designed with a wide, straight leg and full-length finish for an elongated look. Elasticated waistband at the back ensures a comfortable fit, while decorative vertical stitching adds a refined detail to the front. Side zip fastening.</p>
+          <dl class="product-specs" hidden>
+            <dt>Material</dt><dd>100% linen or ramie</dd>
+            <dt>Colour</dt><dd>Black, Green, Ivory</dd>
+            <dt>Fit</dt><dd>Relaxed, flowing silhouette</dd>
+          </dl>
+          <ul class="product-images" hidden>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/trousers/6.jpg?updatedAt=1788090052221&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Trousers"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/trousers/1.jpg?updatedAt=1788090052259&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Trousers"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/trousers/2.jpg?updatedAt=1788090052227&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Trousers"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/trousers/3.jpg?updatedAt=1788090052209&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Trousers"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/trousers/4.jpg?updatedAt=1788090052291&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Trousers"></li>
+            <li><img src="https://ik.imagekit.io/colibrarian/Kondo/products/trousers/5.jpg?updatedAt=1788090052272&tr=w-900,q-75,f-auto" alt="KONDŌ City Drop — Trousers"></li>
+          </ul>
         </article>
       </div>
     </div>
 
 
-    <div id="dropYoga" class="drop-panel reveal" style="display:none;">
+    <div id="dropYoga" class="drop-panel" style="display:none;">
       <div class="drop-intro">
         <span class="tag">Yoga Drop</span>
         <h3 style="font-family:var(--body); font-style:italic; font-weight:500; font-size:1.3rem; margin-top:8px;">Clothing created for the practice of yoga.</h3>
@@ -817,19 +882,24 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
   <button class="modal-close" id="modalCloseBtn" aria-label="Close">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
   </button>
-  <div class="modal-media" id="modalMedia"></div>
+  <div class="modal-media" id="modalMedia">
+    <button class="modal-nav modal-nav-prev" id="modalPrevBtn" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="modal-nav modal-nav-next" id="modalNextBtn" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="modal-dots" id="modalDots"></div>
+  </div>
   <div class="modal-info">
     <div class="modal-line" id="modalLine"></div>
     <h3 class="modal-name" id="modalName"></h3>
     <p class="modal-price" id="modalPrice"></p>
     <p class="modal-desc" id="modalDesc"></p>
     <ul class="modal-specs" id="modalSpecs"></ul>
-    <div>
-      <span class="modal-sizes-label">Size</span>
-      <div class="size-options" id="sizeOptions"></div>
-    </div>
+    <div class="modal-options" id="modalOptions"></div>
     <button class="add-btn modal-add-btn" id="modalAddBtn">Add to Bag</button>
-    <p class="modal-size-hint" id="modalSizeHint">Please select a size.</p>
+    <p class="modal-size-hint" id="modalSizeHint">Please select an option.</p>
     <p class="modal-added-msg" id="modalAddedMsg">Added to your bag.</p>
   </div>
 </div>
@@ -860,23 +930,32 @@ const PRODUCTS = {};
 document.querySelectorAll('.product-card').forEach(card=>{
   const priceRaw = card.dataset.price;
   const descEl = card.querySelector('.product-desc');
-  const specEls = card.querySelectorAll('.product-specs li');
+  const specDts = card.querySelectorAll('.product-specs dt');
+  const galleryImgs = Array.from(card.querySelectorAll('.product-images img')).map(img=>img.getAttribute('src'));
+  const cardThumb = card.querySelector('.product-photo img');
+
+  /* Selectable option groups — only included for products that define them */
+  const options = [];
+  if(card.dataset.materials) options.push({ key:'Material', values: card.dataset.materials.split(',') });
+  if(card.dataset.colors)    options.push({ key:'Colour',   values: card.dataset.colors.split(',') });
+  options.push({ key:'Size', values: card.dataset.sizes ? card.dataset.sizes.split(',') : DEFAULT_SIZES });
+
   PRODUCTS[card.dataset.id] = {
     id: card.dataset.id,
     name: card.dataset.name,
     line: card.dataset.line,
     price: priceRaw ? parseFloat(priceRaw) : null,
-    image: card.dataset.image || '',
-    sizes: card.dataset.sizes ? card.dataset.sizes.split(',') : DEFAULT_SIZES,
+    images: galleryImgs.length ? galleryImgs : (cardThumb ? [cardThumb.getAttribute('src')] : []),
+    options: options,
     desc: descEl ? descEl.textContent.trim() : DEFAULT_DESC,
-    specs: Array.from(specEls).map(li=>li.textContent.trim())
+    specs: Array.from(specDts).map(dt=>({ label: dt.textContent.trim(), value: dt.nextElementSibling.textContent.trim() }))
   };
 });
 
 const productSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1"><path d="M8 4h8l2 4-3 2v10H9V10L6 8l2-4Z"/></svg>`;
 function priceLabel(price){ return price===null ? 'Price on request' : price + ' €'; }
 
-let cart = {}; // { "id|size": { id, size, qty } }
+let cart = {}; // { cartKey: { id, qty, options: {Material,Colour,Size} } }
 
 /* ---------- tabs ---------- */
 document.querySelectorAll('.drop-tab').forEach(btn=>{
@@ -893,33 +972,70 @@ document.querySelectorAll('.drop-tab').forEach(btn=>{
 const productOverlay = document.getElementById('productOverlay');
 const productModal = document.getElementById('productModal');
 const modalMedia = document.getElementById('modalMedia');
+const modalPrevBtn = document.getElementById('modalPrevBtn');
+const modalNextBtn = document.getElementById('modalNextBtn');
+const modalDots = document.getElementById('modalDots');
 const modalLine = document.getElementById('modalLine');
 const modalName = document.getElementById('modalName');
 const modalPrice = document.getElementById('modalPrice');
 const modalDesc = document.getElementById('modalDesc');
 const modalSpecs = document.getElementById('modalSpecs');
-const sizeOptions = document.getElementById('sizeOptions');
+const modalOptions = document.getElementById('modalOptions');
 const modalAddBtn = document.getElementById('modalAddBtn');
 const modalSizeHint = document.getElementById('modalSizeHint');
 const modalAddedMsg = document.getElementById('modalAddedMsg');
 let activeProductId = null;
-let activeSize = null;
+let activeSelection = {};
+let activeImageIndex = 0;
+
+function renderModalImage(){
+  const p = PRODUCTS[activeProductId];
+  const src = p.images[activeImageIndex];
+  modalMedia.querySelector('img, svg')?.remove();
+  const el = src
+    ? Object.assign(document.createElement('img'), { src, alt: `KONDŌ ${p.line} — ${p.name}` })
+    : (()=>{ const d=document.createElement('div'); d.innerHTML=productSvg; return d.firstElementChild; })();
+  modalMedia.insertBefore(el, modalMedia.firstChild);
+  modalDots.querySelectorAll('.modal-dot').forEach((d,i)=>d.classList.toggle('active', i===activeImageIndex));
+}
+function stepImage(delta){
+  const p = PRODUCTS[activeProductId];
+  if(!p || p.images.length<2) return;
+  activeImageIndex = (activeImageIndex + delta + p.images.length) % p.images.length;
+  renderModalImage();
+}
 
 function openProductModal(id){
   const p = PRODUCTS[id];
   if(!p) return;
   activeProductId = id;
-  activeSize = null;
-  modalMedia.innerHTML = p.image
-    ? `<img src="${p.image}" alt="KONDŌ ${p.line} — ${p.name}">`
-    : productSvg;
+  activeSelection = {};
+  activeImageIndex = 0;
+
+  const hasMultipleImages = p.images.length > 1;
+  modalPrevBtn.classList.toggle('hidden-nav', !hasMultipleImages);
+  modalNextBtn.classList.toggle('hidden-nav', !hasMultipleImages);
+  modalDots.innerHTML = hasMultipleImages
+    ? p.images.map((_,i)=>`<button type="button" class="modal-dot" data-i="${i}" aria-label="Photo ${i+1}"></button>`).join('')
+    : '';
+  renderModalImage();
+
   modalLine.textContent = p.line;
   modalName.textContent = p.name;
   modalPrice.textContent = priceLabel(p.price);
   modalDesc.textContent = p.desc;
-  modalSpecs.innerHTML = p.specs.map(s=>`<li>${s}</li>`).join('');
+  modalSpecs.innerHTML = p.specs.map(s=>`<li><strong>${s.label}:</strong> ${s.value}</li>`).join('');
   modalSpecs.style.display = p.specs.length ? '' : 'none';
-  sizeOptions.innerHTML = p.sizes.map(s=>`<button type="button" class="size-btn" data-size="${s}">${s}</button>`).join('');
+
+  modalOptions.innerHTML = p.options.map(group => `
+    <div class="option-group" data-group="${group.key}">
+      <span class="modal-sizes-label">${group.key}</span>
+      <div class="size-options">
+        ${group.values.map(v=>`<button type="button" class="size-btn" data-value="${v}">${v}</button>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
   modalSizeHint.classList.remove('show');
   modalAddedMsg.classList.remove('show');
   modalAddBtn.textContent = 'Add to Bag';
@@ -940,25 +1056,47 @@ document.querySelectorAll('.product-card').forEach(card=>{
 });
 document.getElementById('modalCloseBtn').addEventListener('click', closeProductModal);
 productOverlay.addEventListener('click', closeProductModal);
-document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeProductModal(); });
+document.addEventListener('keydown', (e)=>{
+  if(!productModal.classList.contains('show')) return;
+  if(e.key==='Escape') closeProductModal();
+  if(e.key==='ArrowLeft') stepImage(-1);
+  if(e.key==='ArrowRight') stepImage(1);
+});
+modalPrevBtn.addEventListener('click', ()=> stepImage(-1));
+modalNextBtn.addEventListener('click', ()=> stepImage(1));
+modalDots.addEventListener('click', (e)=>{
+  const btn = e.target.closest('.modal-dot');
+  if(!btn) return;
+  activeImageIndex = parseInt(btn.dataset.i, 10);
+  renderModalImage();
+});
 
-sizeOptions.addEventListener('click', (e)=>{
+modalOptions.addEventListener('click', (e)=>{
   const btn = e.target.closest('.size-btn');
   if(!btn) return;
-  activeSize = btn.dataset.size;
-  sizeOptions.querySelectorAll('.size-btn').forEach(b=>b.classList.toggle('selected', b===btn));
+  const group = btn.closest('.option-group');
+  const groupKey = group.dataset.group;
+  activeSelection[groupKey] = btn.dataset.value;
+  group.querySelectorAll('.size-btn').forEach(b=>b.classList.toggle('selected', b===btn));
   modalSizeHint.classList.remove('show');
 });
 
 modalAddBtn.addEventListener('click', ()=>{
-  if(!activeSize){ modalSizeHint.classList.add('show'); return; }
-  const key = activeProductId + '|' + activeSize;
-  cart[key] = { id: activeProductId, size: activeSize, qty: (cart[key]?cart[key].qty:0) + 1 };
+  const p = PRODUCTS[activeProductId];
+  const missing = p.options.some(g => !activeSelection[g.key]);
+  if(missing){ modalSizeHint.classList.add('show'); return; }
+  const selection = {...activeSelection};
+  const key = activeProductId + '|' + p.options.map(g=>selection[g.key]).join('|');
+  cart[key] = { id: activeProductId, options: selection, qty: (cart[key]?cart[key].qty:0) + 1 };
   modalAddedMsg.classList.add('show');
   updateCart();
 });
 
 /* ---------- cart rendering ---------- */
+function optionsLabel(entry){
+  return Object.values(entry.options).join(' / ');
+}
+
 function updateCart(){
   const keys = Object.keys(cart).filter(k=>cart[k].qty>0);
   const count = keys.reduce((a,k)=>a+cart[k].qty,0);
@@ -973,12 +1111,13 @@ function updateCart(){
     body.innerHTML = keys.map(key=>{
       const entry = cart[key];
       const p = PRODUCTS[entry.id];
+      const thumb = p.images[0];
       const lineTotal = p.price===null ? 'On request' : (p.price*entry.qty)+' €';
       return `
       <div class="cart-item" data-key="${key}">
-        <div class="cart-item-photo">${p.image ? `<img src="${p.image}" alt="" style="width:100%;height:100%;object-fit:cover;">` : productSvg}</div>
+        <div class="cart-item-photo">${thumb ? `<img src="${thumb}" alt="" style="width:100%;height:100%;object-fit:cover;">` : productSvg}</div>
         <div class="cart-item-info">
-          <div class="name">${p.name} — ${entry.size}</div>
+          <div class="name">${p.name} — ${optionsLabel(entry)}</div>
           <div class="line">${p.line}</div>
           <div class="qty-row">
             <button class="qty-btn" data-act="minus" aria-label="Decrease quantity">–</button>
@@ -1009,11 +1148,11 @@ function updateCart(){
     formList.innerHTML = keys.map(key=>{
       const entry = cart[key]; const p = PRODUCTS[entry.id];
       const lineTotal = p.price===null ? 'on request' : (p.price*entry.qty)+' €';
-      return `<li><span>${p.name} (${entry.size}) × ${entry.qty}</span><span>${lineTotal}</span></li>`;
+      return `<li><span>${p.name} (${optionsLabel(entry)}) × ${entry.qty}</span><span>${lineTotal}</span></li>`;
     }).join('') + `<li style="border-top:1px solid var(--line); margin-top:6px; padding-top:10px; font-weight:600; color:var(--ink);"><span>Total</span><span>${total} €${keys.some(k=>PRODUCTS[cart[k].id].price===null) ? ' + items on request' : ''}</span></li>`;
     hidden.value = keys.map(key=>{
       const entry = cart[key]; const p = PRODUCTS[entry.id];
-      return `${p.name} (${entry.size}) × ${entry.qty}`;
+      return `${p.name} (${optionsLabel(entry)}) × ${entry.qty}`;
     }).join('; ') + ` — total ${total} €`;
   }
 }
