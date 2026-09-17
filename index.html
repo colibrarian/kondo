@@ -6,16 +6,16 @@
 <title>KONDŌ — Golden Hall | Yoga &amp; City Wear, Made to Order</title>
 <meta name="description" content="KONDŌ (金堂, 'Golden Hall') is a made-to-order clothing brand built around the practice of yoga. Linen and ramie garments across two collections, Yoga Drop and City Drop. Available by pre-order, shipped in 1–2 weeks.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://YOUR-DOMAIN.com/">
+<link rel="canonical" href="https://kondo.ee/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KONDŌ">
 <meta property="og:title" content="KONDŌ — Golden Hall | Yoga &amp; City Wear, Made to Order">
 <meta property="og:description" content="A philosophy of life, born from the practice of yoga. Linen and ramie, made to order. Yoga Drop &amp; City Drop.">
-<meta property="og:url" content="https://YOUR-DOMAIN.com/">
+<meta property="og:url" content="https://kondo.ee/">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://YOUR-DOMAIN.com/assets/og-image.jpg">
+<meta property="og:image" content="https://kondo.ee/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="KONDŌ — Golden Hall. Where the Dragon Dwells.">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KONDŌ — Golden Hall | Made to Order">
 <meta name="twitter:description" content="A philosophy of life, born from the practice of yoga. Linen and ramie, made to order.">
-<meta name="twitter:image" content="https://YOUR-DOMAIN.com/assets/og-image.jpg">
+<meta name="twitter:image" content="https://kondo.ee/assets/og-image.jpg">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
@@ -48,9 +48,9 @@
   "name": "KONDŌ",
   "alternateName": "金堂",
   "slogan": "Where the Dragon Dwells",
-  "url": "https://YOUR-DOMAIN.com/",
+  "url": "https://kondo.ee/",
   "description": "KONDŌ is a made-to-order clothing brand. In Japanese Buddhism, KONDŌ (金堂) means 'Golden Hall' — the central and most sacred space of a Buddhist temple. KONDŌ represents a sacred space of spiritual harmony, inner balance, and perfection.",
-  "email": "contact@kondo.ee",
+  "email": "designs.alys@gmail.com",
   "telephone": "+372-583-76-982",
   "availableLanguage": ["Russian", "Estonian", "English"],
   "sameAs": ["https://www.instagram.com/kondo_est"],
@@ -911,7 +911,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
       </div>
       <dl>
         <dt>Email</dt>
-        <dd><a href="mailto:contact@kondo.ee">contact@kondo.ee</a></dd>
+        <dd><a href="mailto:designs.alys@gmail.com">designs.alys@gmail.com</a></dd>
         <dt>Call</dt>
         <dd><a href="tel:+37258376982">+372 583 76 982</a></dd>
         <dt>Instagram</dt>
@@ -949,6 +949,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
 
       <button type="submit" class="submit-btn" id="submitBtn">Send Request</button>
       <p class="form-status" id="formStatus"></p>
+      <p style="font-family:var(--ui); font-size:.72rem; color:var(--ink-soft); margin-top:14px; line-height:1.5;">By submitting this form, you agree to our <a href="privacy.html" style="text-decoration:underline; color:var(--ink);">Privacy Policy</a>.</p>
     </form>
   </div>
 </section>
@@ -956,7 +957,7 @@ footer{ padding:48px var(--gap) 40px; border-top:1px solid var(--line); }
 <footer>
   <div class="footer-grid">
     <span class="footer-logo">KONDŌ</span>
-    <span class="footer-copy">© <span id="year">2026</span> KONDŌ. Made to order, season after season.</span>
+    <span class="footer-copy">© <span id="year">2026</span> KONDŌ. Made to order, season after season. · <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a></span>
   </div>
 </footer>
 
@@ -1338,7 +1339,7 @@ orderForm.addEventListener('submit', async (e)=>{
   const btn = document.getElementById('submitBtn');
 
   if(FORM_ENDPOINT.includes('YOUR_FORM_ID')){
-    status.textContent = 'Form is not connected yet. Please email contact@kondo.ee directly.';
+    status.textContent = 'Form is not connected yet. Please email designs.alys@gmail.com directly.';
     status.className = 'form-status show err';
     return;
   }
@@ -1361,7 +1362,7 @@ orderForm.addEventListener('submit', async (e)=>{
       throw new Error('bad response');
     }
   } catch(err){
-    status.textContent = 'Could not send. Please try again or email contact@kondo.ee.';
+    status.textContent = 'Could not send. Please try again or email designs.alys@gmail.com.';
     status.className = 'form-status show err';
   } finally {
     btn.disabled = false; btn.textContent = 'Send Request';
