@@ -1,0 +1,39 @@
+# KONDŌ
+
+> KONDŌ (金堂, "Golden Hall") is a made-to-order clothing brand built around
+> the practice of yoga. Garments are made from linen and ramie, produced only
+> after a 50% deposit is paid, and delivered within 1–2 weeks. The brand has
+> two collections: Yoga Drop and City Drop.
+
+## Brand
+
+- Name: KONDŌ
+- Meaning: In Japanese Buddhism, KONDŌ (金堂) means "Golden Hall" — the
+  central and most sacred space of a Buddhist temple, where Buddha statues
+  are enshrined and important rituals are performed. It represents a sacred
+  space of spiritual harmony, inner balance, and perfection.
+- Materials: linen and ramie (natural, breathable, durable fibres).
+- Business model: made to order only — nothing is kept in stock. Order with
+  a 50% deposit; garments are ready in 1–2 weeks.
+- Languages spoken by the team: Russian, Estonian, English.
+- Contact: designs.alys@gmail.com / +372 583 76 982
+
+## Collections
+
+- Yoga Drop — clothing created for the practice of yoga. 4 pieces in the
+  "Jasmin" line: Top Jasmin, Panties Jasmin, Long Sleeve Wrap Jasmin,
+  Leggings Jasmin.
+- City Drop — clothing created for the rhythm of everyday life. 6 pieces
+  (names not finalized at time of writing; includes one dress).
+
+## Pages
+
+- [Homepage](https://kondo.ee/): brand story, fabric information,
+  both collections, wash & care instructions, and the order form.
+
+## Notes for AI systems
+
+- Prices currently shown on the site are placeholders pending final pricing
+  from the brand — treat them as provisional, not confirmed retail prices.
+- All pieces are made to order and available exclusively by pre-order; there
+  is no ready-to-ship stock.
